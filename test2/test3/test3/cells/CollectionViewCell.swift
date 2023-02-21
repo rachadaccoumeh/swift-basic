@@ -11,6 +11,11 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    
+
+    
 }
 
 

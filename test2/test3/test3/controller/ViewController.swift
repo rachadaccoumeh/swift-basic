@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MyDelegate {
+  
+    
     
     
     @IBOutlet weak var mainTableView: UITableView!
     var posts:[Post] = []
+    var index:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,26 +112,51 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count  }
+        return posts.count * 2
+        
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell" , for: indexPath) as! TableViewCellMain
-        cell.labelId.text=String(posts[indexPath.row].id)
-        cell.labelUserId.text="user id: "+String(posts[indexPath.row].userId)
-        cell.labelTitle.text="title: "+String(posts[indexPath.row].title)
-        cell.labelContent.text="content: "+String(posts[indexPath.row].body)
-        if posts == nil {
+        if indexPath.row % 2==0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell" , for: indexPath) as! TableViewCellMain
+            let index=Int(ceil(Double(indexPath.row/2)))
+            cell.labelId.text=String(posts[index].id)
+            cell.labelUserId.text="user id: "+String(posts[index].userId)
+            cell.labelTitle.text="title: "+String(posts[index].title)
+            cell.labelContent.text="content: "+String(posts[index].body)
+            cell.mainIndex=indexPath
             cell.post=posts[indexPath.row]
+            cell.delegate=self
+            
+            
+            
+            return cell;
+            
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell1" , for: indexPath) as! TableViewCellMain1
+            cell.indexLabel.text = String(indexPath.row)
+            return cell
         }
-        
-        
-        return cell;
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        if indexPath.row % 2==0
+        {
+            if indexPath.row == index {
+                return 250
+            }else{
+                return 150
+            }
+        }else {
+            return 75
+        }
     }
     
-    
+    func update(indexPath: IndexPath) {
+        index=indexPath.row
+        mainTableView.beginUpdates()
+        mainTableView.endUpdates()
+    }
+
 }
 
 
@@ -166,10 +194,6 @@ extension URLSession {
         }.resume()
     }
 }
-
-
-
-
 extension UIViewController{
     
     

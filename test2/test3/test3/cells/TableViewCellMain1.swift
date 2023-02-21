@@ -1,15 +1,15 @@
 //
-//  TableViewCell.swift
-//  test
+//  TableViewCellMain1.swift
+//  test3
 //
-//  Created by Telepaty1 on 2/16/23.
+//  Created by Telepaty 4 on 21/02/2023.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class TableViewCellMain1: UITableViewCell {
 
-    @IBOutlet weak var itemViewLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +20,5 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }
