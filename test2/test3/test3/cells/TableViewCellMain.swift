@@ -43,8 +43,8 @@ class TableViewCellMain: UITableViewCell, UICollectionViewDataSource, UICollecti
     var index:Int?
     var mainIndex:IndexPath?
     var delegate:MyDelegate?
-
-
+    
+    
     
     
     override func awakeFromNib() {
@@ -69,20 +69,23 @@ class TableViewCellMain: UITableViewCell, UICollectionViewDataSource, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         index=indexPath.row
-//        commentCollection.reloadSections([0])
-        commentCollection.heightAnchor.constraint(equalToConstant: 150).isActive=true
+        //        commentCollection.reloadSections([0])
+        //commentCollection.heightAnchor.constraint(equalToConstant: 150).isActive=true
         delegate?.update(indexPath: mainIndex!)
-  
+        let cell=collectionView.cellForItem(at: indexPath) as? CollectionViewCell
+        cell?.idLabel.isHidden=false
+        cell?.emailLabel.isHidden=false
+        
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if index != indexPath.row{
-//            return CGSize(width: UIScreen.main.bounds.width-40, height: 80)
-//        }else{
-//            return CGSize(width: UIScreen.main.bounds.width-40, height: 200)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        //commentCollection.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        let cell=collectionView.cellForItem(at: indexPath) as? CollectionViewCell
+        cell?.idLabel.isHidden=true
+        cell?.emailLabel.isHidden=true
+        //delegate?.updateCollection(index: mainIndex!)
+    }
 
-   
+  
     
     
     
@@ -94,10 +97,6 @@ class TableViewCellMain: UITableViewCell, UICollectionViewDataSource, UICollecti
         cell.idLabel.text="id: "+String((post?.comment![indexPath.row].id)!)
         cell.emailLabel.isHidden=true
         cell.idLabel.isHidden=true
-        if index==indexPath.row{
-            cell.emailLabel.isHidden=false
-            cell.idLabel.isHidden=false
-        }
         return cell;
     }
     override func prepareForReuse() {
@@ -113,5 +112,6 @@ class TableViewCellMain: UITableViewCell, UICollectionViewDataSource, UICollecti
 }
 protocol MyDelegate {
     func update(indexPath:IndexPath)
+    func updateCollection(index:IndexPath)
 }
 

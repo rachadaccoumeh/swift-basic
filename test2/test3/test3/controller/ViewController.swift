@@ -8,9 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MyDelegate {
-  
-    
-    
+   
     
     @IBOutlet weak var mainTableView: UITableView!
     var posts:[Post] = []
@@ -127,9 +125,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.mainIndex=indexPath
             cell.post=posts[indexPath.row]
             cell.delegate=self
-            
-            
-            
             return cell;
             
         }else{
@@ -139,12 +134,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row % 2==0
-        {
+        if indexPath.row % 2==0 {
             if indexPath.row == index {
                 return 250
             }else{
-                return 150
+                return 250
             }
         }else {
             return 75
@@ -152,11 +146,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func update(indexPath: IndexPath) {
+        if indexPath.row != index{
+            if index != nil{
+                guard let cell = mainTableView.cellForRow(at: IndexPath(item: index!, section: 0)) as? TableViewCellMain else{return}
+                cell.commentCollection.heightAnchor.constraint(equalToConstant: 50).isActive=true
+            }
+        }
         index=indexPath.row
         mainTableView.beginUpdates()
         mainTableView.endUpdates()
     }
-
+    func updateCollection(index: IndexPath) {
+        guard let cell = mainTableView.cellForRow(at: index) as? TableViewCellMain else{return}
+        //cell.commentCollection.heightAnchor.constraint(equalToConstant: 50).isActive=true
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 
@@ -233,5 +239,7 @@ extension UIViewController {
 
 
 
-
+protocol collectionDelagate {
+    func updateCollection(indexpath:IndexPath)
+}
 
