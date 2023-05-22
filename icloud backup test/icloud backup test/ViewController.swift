@@ -76,6 +76,13 @@ struct ContentView: View {
 						Text("Add")
 					}
 				}
+				HStack{
+					Spacer()
+					Button("backup", action: backup)
+					Spacer()
+					Button("restore", action: restore)
+					Spacer()
+				}
 				.padding()
 			}
 			//.navigationTitle("My Library")
@@ -103,32 +110,46 @@ struct ContentView: View {
 	private func backup(){
 		// Create a CloudKit container reference
 		let container = CKContainer(identifier: "your-container-identifier")
-
 		// Create a private database reference
 		let privateDatabase = container.privateCloudDatabase
-
 		// Specify the file URL of the exported database file
-		let fileURL = URL(fileURLWithPath: "/path/to/exported/database/file.sqlite")
-
+		let fileURL = URL(fileURLWithPath: "\(getDatabaseName())")
 		// Create a record ID for the file record
 		let fileRecordID = CKRecord.ID(recordName: "your-file-record-name")
-
 		// Create a record for the file
-		let fileRecord = CKRecord(recordType: "your-file-record-type", recordID: fileRecordID)
-
+		let fileRecord = CKRecord(recordType: "sqlite", recordID: fileRecordID)
 		// Create a file asset with the database file URL
 		let fileAsset = CKAsset(fileURL: fileURL)
 		fileRecord["databaseFile"] = fileAsset
-
 		// Save the file record to the private database
 		privateDatabase.save(fileRecord) { (record, error) in
-			
 			if let error = error {
 				print("Error uploading database file: \(error.localizedDescription)")
 				// Handle the error gracefully
 			} else {
 				print("Database file uploaded successfully")
 				// Handle the successful upload
+			}
+		}
+
+	}
+	private func restore(){
+		// Create a CloudKit container reference
+		let container = CKContainer(identifier: "your-container-identifier")
+		// Create a private database reference
+		let privateDatabase = container.privateCloudDatabase
+		// Create a record ID for the file record
+		let fileRecordID = CKRecord.ID(recordName: "your-file-record-name")
+		// Fetch the file record from the private database
+		privateDatabase.fetch(withRecordID: fileRecordID) { (record, error) in
+			if let error = error {
+				print("Error fetching file record: \(error.localizedDescription)")
+				// Handle the error gracefully
+			} else if let fileAsset = record?["databaseFile"] as? CKAsset,
+						let fileURL = fileAsset.fileURL {
+				print("done            !!!!!!!!!!!")
+				// File downloaded successfully, now you have the file URL
+				// Proceed with replacing the existing database file in your app's storage
 			}
 		}
 
