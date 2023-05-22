@@ -1,0 +1,6 @@
+framework module Pods_icloud_backup_test {
+  umbrella header "Pods-icloud backup test-umbrella.h"
+
+  export *
+  module * { export * }
+}
