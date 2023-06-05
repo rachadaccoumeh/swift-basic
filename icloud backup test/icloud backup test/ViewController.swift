@@ -109,13 +109,13 @@ struct ContentView: View {
 	}
 	private func backup(){
 		// Create a CloudKit container reference
-		let container = CKContainer(identifier: "your-container-identifier")
+		let container = CKContainer(identifier: "iCloud.com.Telepaty.icloudExample")
 		// Create a private database reference
 		let privateDatabase = container.privateCloudDatabase
 		// Specify the file URL of the exported database file
-		let fileURL = URL(fileURLWithPath: "\(getDatabaseName())")
+		let fileURL = URL(fileURLWithPath: getDatabasePath())
 		// Create a record ID for the file record
-		let fileRecordID = CKRecord.ID(recordName: "your-file-record-name")
+		let fileRecordID = CKRecord.ID(recordName: "user id 1")
 		// Create a record for the file
 		let fileRecord = CKRecord(recordType: "sqlite", recordID: fileRecordID)
 		// Create a file asset with the database file URL
@@ -135,11 +135,11 @@ struct ContentView: View {
 	}
 	private func restore(){
 		// Create a CloudKit container reference
-		let container = CKContainer(identifier: "your-container-identifier")
+		let container = CKContainer(identifier: "iCloud.com.Telepaty.icloudExample")
 		// Create a private database reference
 		let privateDatabase = container.privateCloudDatabase
 		// Create a record ID for the file record
-		let fileRecordID = CKRecord.ID(recordName: "your-file-record-name")
+		let fileRecordID = CKRecord.ID(recordName: "user id 1")
 		// Fetch the file record from the private database
 		privateDatabase.fetch(withRecordID: fileRecordID) { (record, error) in
 			if let error = error {
@@ -147,32 +147,32 @@ struct ContentView: View {
 				// Handle the error gracefully
 			} else if let fileAsset = record?["databaseFile"] as? CKAsset,
 						let fileURL = fileAsset.fileURL {
-				print("done            !!!!!!!!!!!")
+				print("done            !!!!!!!!!!!\(fileURL)")
 				// File downloaded successfully, now you have the file URL
 				// Proceed with replacing the existing database file in your app's storage
 			}
 		}
 
 	}
-	func getDatabasePath() -> URL? {
-		guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-			return nil
-		}
-		let databaseURL = documentsDirectory.appendingPathComponent("mydatabase.sqlite3")
-		return databaseURL
+	func getDatabasePath() -> String {
+//		guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+//			return nil
+//		}
+//		let databaseURL = documentsDirectory.appendingPathComponent("mydatabase.sqlite3")
+//		return databaseURL
+		return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!+"/mydatabase.sqlite3";
 	}
 
-	func getDatabaseName() -> String {
-		guard let databaseURL = getDatabasePath() else {
-			return ""
-		}
-		return databaseURL.lastPathComponent
-	}
+//	func getDatabaseName() -> String {
+//		guard let databaseURL = getDatabasePath() else {
+//			return ""
+//		}
+//		return databaseURL.lastPathComponent
+//	}
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Previews_ViewController_Previews: PreviewProvider {
 	static var previews: some View {
 		ContentView()
 	}
 }
-
