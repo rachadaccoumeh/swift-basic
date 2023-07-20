@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A65ABD9B-28C3-4BF5-A396-87E8B0B425DD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "899A0C49-5082-4DF0-AA30-E3ED02423D76"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mention/MentionTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "getMentionRange(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84857FDC-F91D-4436-88EF-F3C04C8EC2EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mention/MentionTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "getMentions(after:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84857FDC-F91D-4436-88EF-F3C04C8EC2EA - ef9a147ed08d8e45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mention.MentionTextView.getMentionRange(for: Swift.Int) -&gt; Swift.Optional&lt;__C._NSRange&gt;"
+                  moduleName = "mention"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/telepaty41/Desktop/swift-basic/mention/mention/MentionTextView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "84857FDC-F91D-4436-88EF-F3C04C8EC2EA - 3440b506da042940"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mention.MentionTextView.getMentions(after: Swift.Int) -&gt; Swift.Array&lt;__C._NSRange&gt;"
+                  moduleName = "mention"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/telepaty41/Desktop/swift-basic/mention/mention/MentionTextView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DCFA8A3-0736-4CAA-A8D5-F5779604B003"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mention/MentionTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "mentionAtIndex(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            uuid = "21DA7FBD-9590-43FA-986E-D1B7633DED1C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "AFE100C0-07E6-4F04-B65F-1FD1CB55439A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF96F2B8-1120-40BD-8DC6-8FD010E1E898"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mention/MentionTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "insertText(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3433A00B-D4EF-4915-BB1B-7D050EDBB259"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mention/MentionTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "addMention(mentionId:mentionDisplayName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3433A00B-D4EF-4915-BB1B-7D050EDBB259 - b2fb80f99fadeecd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mention.MentionTextView.addMention(mentionId: Swift.String, mentionDisplayName: Swift.String) -&gt; ()"
+                  moduleName = "mention"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/telepaty41/Desktop/swift-basic/mention/mention/MentionTextView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "3433A00B-D4EF-4915-BB1B-7D050EDBB259 - b2fb80f99fadeecd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mention.MentionTextView.addMention(mentionId: Swift.String, mentionDisplayName: Swift.String) -&gt; ()"
+                  moduleName = "mention"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/telepaty41/Desktop/swift-basic/mention/mention/MentionTextView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7465331-12AC-4B92-A0AD-844B062637ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mention/MentionTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "addMention(mentionId:mentionDisplayName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A7465331-12AC-4B92-A0AD-844B062637ED - b2fb80f99fadeffa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mention.MentionTextView.addMention(mentionId: Swift.String, mentionDisplayName: Swift.String) -&gt; ()"
+                  moduleName = "mention"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/telepaty41/Desktop/swift-basic/mention/mention/MentionTextView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1332">
+               </Location>
+               <Location
+                  uuid = "A7465331-12AC-4B92-A0AD-844B062637ED - b2fb80f99fadeffa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mention.MentionTextView.addMention(mentionId: Swift.String, mentionDisplayName: Swift.String) -&gt; ()"
+                  moduleName = "mention"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/telepaty41/Desktop/swift-basic/mention/mention/MentionTextView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
